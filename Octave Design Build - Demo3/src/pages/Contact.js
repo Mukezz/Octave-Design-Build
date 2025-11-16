@@ -41,6 +41,19 @@ const Contact = () => {
       return;
     }
 
+    // Phone validation (if provided)
+    if (formData.phone) {
+      // Simple phone validation - accepts various formats
+      const phoneRegex = /^[+]?[0-9\s\-().]{10,}$/;
+      if (!phoneRegex.test(formData.phone)) {
+        setFormStatus({
+          type: 'error',
+          message: 'Please enter a valid phone number.'
+        });
+        return;
+      }
+    }
+
     // Simulate form submission
     console.log('Form submitted:', formData);
     
