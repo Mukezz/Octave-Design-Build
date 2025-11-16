@@ -1,0 +1,143 @@
+.footer-custom {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 3rem 0 1.5rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+}
+
+.footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.footer-description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.footer-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a,
+.footer-links li {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 5px var(--glow-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+}
+
+.social-icon:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px var(--glow-color);
+  transform: translateY(-3px);
+}
+
+.footer-contact {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.footer-contact strong {
+  color: var(--text-secondary);
+}
+
+.footer-divider {
+  border-color: var(--border-color);
+  margin: 2rem 0 1rem;
+  opacity: 0.5;
+}
+
+.footer-bottom {
+  padding-top: 1rem;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+}
+
+.footer-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .footer-custom {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-legal {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+

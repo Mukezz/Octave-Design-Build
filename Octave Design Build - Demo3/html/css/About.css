@@ -1,0 +1,236 @@
+/* About Page Styles */
+
+.about-hero {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, rgba(0, 105, 92, 0.05) 0%, rgba(0, 77, 64, 0.1) 100%);
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--primary-color);
+  z-index: 2;
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-year {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Values Section */
+.values-section {
+  background-color: var(--neutral-light);
+}
+
+.value-card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  height: 100%;
+  transition: var(--transition-smooth);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.value-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Team Section */
+.team-card {
+  text-align: center;
+}
+
+.team-image-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.team-card:hover .team-image-wrapper img {
+  transform: scale(1.1);
+}
+
+.card-subtitle {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Video Section */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    flex-direction: row !important;
+    padding-left: 60px;
+  }
+
+  .timeline-marker {
+    left: 30px;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 100px 0 60px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .timeline-year {
+    font-size: 1.25rem;
+  }
+
+  .timeline-title {
+    font-size: 1.25rem;
+  }
+}
+

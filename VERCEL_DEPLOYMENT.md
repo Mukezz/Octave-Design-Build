@@ -26,9 +26,9 @@ This guide will help you deploy the Octave Design Build project to Vercel.
 
 3. **Configure Build Settings**
    - **Framework Preset**: Other
-   - **Build Command**: `npm run build` (or leave empty if builds are already done)
+   - **Build Command**: (leave empty - no build needed)
    - **Output Directory**: `.` (root directory)
-   - **Install Command**: `npm run install:all` (or `npm install`)
+   - **Install Command**: (leave empty - no dependencies needed)
 
 4. **Deploy**
    - Click "Deploy"
@@ -65,31 +65,28 @@ This guide will help you deploy the Octave Design Build project to Vercel.
 
 The project contains:
 - **Demo1 & Demo2**: Static HTML/CSS/JS sites
-- **Demo3 & Demo4**: React applications (need to be built)
+- **Demo3 & Demo4**: Static HTML/CSS/JS sites (converted from React)
 - **demo-switcher.html**: Landing page to select demos
 
 ## Build Process
 
-The root `package.json` includes scripts to:
-- Build both React demos: `npm run build`
-- Install dependencies for all demos: `npm run install:all`
-- Build individual demos: `npm run build:demo3` or `npm run build:demo4`
+**No build required!** All demos are now static HTML/CSS/JS files. Simply deploy directly to Vercel.
+
+The root `package.json` includes a script to:
+- Serve locally: `npm run serve`
 
 ## Important Notes
 
-1. **React Apps**: Demo3 and Demo4 need to be built before deployment. The build process is automated via the root `package.json`.
+1. **Static Sites**: Demo3 and Demo4 are now static HTML/CSS/JS sites. No build process needed.
 
 2. **Routing**: The `vercel.json` file handles:
    - Serving `demo-switcher.html` as the homepage
-   - Routing for static demos (Demo1, Demo2)
-   - Client-side routing for React apps (Demo3, Demo4)
+   - Routing for all static demos (Demo1, Demo2, Demo3, Demo4)
+   - Serving HTML files from the `html/` directories
 
-3. **Build Folders**: Make sure the `build` folders for Demo3 and Demo4 exist. If not, run:
-   ```bash
-   npm run build
-   ```
-
-4. **Environment Variables**: If your React apps need environment variables, add them in Vercel dashboard under Project Settings > Environment Variables.
+3. **File Structure**: 
+   - Demo3 files are in: `Octave Design Build - Demo3/html/`
+   - Demo4 files are in: `Octave Design Build - Demo4/html/`
 
 ## Troubleshooting
 
@@ -100,8 +97,9 @@ The root `package.json` includes scripts to:
 
 ### Routes Not Working
 - Verify `vercel.json` configuration
-- Check that build folders exist for Demo3 and Demo4
+- Check that `html/` folders exist for Demo3 and Demo4
 - Ensure file paths match exactly (case-sensitive)
+- Verify that HTML files are in the correct `html/` subdirectories
 
 ### Assets Not Loading
 - Check that image paths are relative, not absolute
@@ -115,17 +113,17 @@ After successful deployment:
 2. You can add a custom domain in Project Settings > Domains
 3. Each push to your main branch will trigger automatic deployments
 
-## Manual Build (if needed)
+## Local Development
 
-If you want to build locally before deploying:
+To serve the site locally:
 
 ```bash
-# Install dependencies for all React apps
-npm run install:all
+# Install http-server (one-time)
+npm install
 
-# Build all React apps
-npm run build
+# Start local server
+npm run serve
 ```
 
-Then commit and push the build folders.
+The site will be available at `http://localhost:3000`
 

@@ -1,0 +1,126 @@
+/* CSS Variables for Theme System */
+:root[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2c2c2c;
+  --bg-tertiary: #121212;
+  --accent-color: #00bfff;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 191, 255, 0.3);
+  --glow-color: rgba(0, 191, 255, 0.5);
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #e8e8e8;
+  --accent-color: #2C3E50;
+  --text-primary: #1a1a1a;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --border-color: #cccccc;
+  --shadow-color: rgba(44, 62, 80, 0.2);
+  --glow-color: rgba(44, 62, 80, 0.3);
+}
+
+.App {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px var(--glow-color);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Global Styles */
+main {
+  min-height: calc(100vh - 200px);
+  padding-top: 80px; /* Account for fixed header */
+}
+
+/* Utility Classes */
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-dark-custom {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary-custom {
+  background-color: var(--bg-secondary);
+}
+
+.border-custom {
+  border-color: var(--border-color);
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px var(--glow-color);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Skip to main content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-color);
+  color: var(--text-primary);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+

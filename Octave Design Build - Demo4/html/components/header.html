@@ -1,0 +1,49 @@
+<header class="header-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" onclick="closeMenu()">
+        <span class="brand-text">Octave Design and Build</span>
+      </a>
+      
+      <button
+        class="navbar-toggler"
+        type="button"
+        id="mobile-menu-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" onclick="closeMenu()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" onclick="closeMenu()">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html" onclick="closeMenu()">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html" onclick="closeMenu()">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" onclick="closeMenu()">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button
+              class="theme-toggle-btn"
+              onclick="window.themeManager && window.themeManager.toggle()"
+              aria-label="Switch theme"
+            >
+              <span class="theme-icon">🌙</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+

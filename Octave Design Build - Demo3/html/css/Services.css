@@ -1,0 +1,243 @@
+/* Services Page Styles */
+
+.services-hero {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, rgba(0, 105, 92, 0.05) 0%, rgba(0, 77, 64, 0.1) 100%);
+}
+
+/* Services Tabs */
+.services-tabs-section {
+  background-color: white;
+}
+
+.services-tabs {
+  border-bottom: 2px solid var(--neutral-light);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.services-tabs .nav-item {
+  margin: 0 0.5rem;
+}
+
+.services-tabs .nav-link {
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+}
+
+.services-tabs .nav-link:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background-color: rgba(0, 105, 92, 0.05);
+}
+
+.services-tabs .nav-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background-color: rgba(0, 105, 92, 0.05);
+}
+
+.service-tab-icon {
+  font-size: 1.5rem;
+}
+
+.service-image-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-image-wrapper img {
+  width: 100%;
+  height: auto;
+  transition: var(--transition-smooth);
+}
+
+.service-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.service-content {
+  padding: 2rem 0;
+}
+
+.service-content-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.service-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
+  padding: 0.75rem 0;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+.service-features li i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Pricing Section */
+.pricing-section {
+  background-color: var(--neutral-light);
+}
+
+.pricing-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.featured {
+  border: 3px solid var(--primary-color);
+  transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  color: var(--text-primary);
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-tier {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.pricing-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  padding: 0.75rem 0;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pricing-features li i {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .services-tabs .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .service-content-title {
+    font-size: 2rem;
+  }
+
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+
+  .pricing-card.featured:hover {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 100px 0 60px;
+  }
+
+  .services-tabs {
+    flex-direction: column;
+  }
+
+  .services-tabs .nav-item {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  .services-tabs .nav-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .service-content {
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+  }
+
+  .service-content-title {
+    font-size: 1.75rem;
+  }
+
+  .pricing-price {
+    font-size: 2rem;
+  }
+}
+
