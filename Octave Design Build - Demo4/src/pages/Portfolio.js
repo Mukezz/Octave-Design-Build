@@ -126,11 +126,12 @@ const Portfolio = () => {
         { threshold: 0.5 }
       );
 
-      observer.observe(observerRef.current);
+      const currentObserverRef = observerRef.current;
+      observer.observe(currentObserverRef);
 
       return () => {
-        if (observerRef.current) {
-          observer.unobserve(observerRef.current);
+        if (currentObserverRef) {
+          observer.unobserve(currentObserverRef);
         }
       };
     }
