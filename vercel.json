@@ -15,14 +15,6 @@
     {
       "source": "/demo4",
       "destination": "/Octave Design Build - Demo4/html/index.html"
-    },
-    {
-      "source": "/Octave Design Build - Demo3/(.*)",
-      "destination": "/Octave Design Build - Demo3/html/$1"
-    },
-    {
-      "source": "/Octave Design Build - Demo4/(.*)",
-      "destination": "/Octave Design Build - Demo4/html/$1"
     }
   ],
   "headers": [
