@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './About.css';
 
 const About = () => {
-  const [activeAccordion, setActiveAccordion] = useState(0);
 
   const timeline = [
     {
@@ -109,10 +108,6 @@ const About = () => {
       description: 'Open communication and honest practices build trust. We maintain clarity in all our processes and relationships.'
     }
   ];
-
-  const toggleAccordion = (index) => {
-    setActiveAccordion(activeAccordion === index ? null : index);
-  };
 
   return (
     <div className="about-page">
