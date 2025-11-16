@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/demo-switcher.html"
+    },
+    {
+      "source": "/Octave Design Build - Demo3/(.*)",
+      "destination": "/Octave Design Build - Demo3/build/index.html"
+    },
+    {
+      "source": "/Octave Design Build - Demo4/(.*)",
+      "destination": "/Octave Design Build - Demo4/build/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/Octave Design Build - Demo3/build/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/Octave Design Build - Demo4/build/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
+

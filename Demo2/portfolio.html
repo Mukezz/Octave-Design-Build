@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Octave Design and Build's portfolio of completed projects: residential, commercial, and renovation projects showcasing our expertise.">
+    <meta name="keywords" content="construction portfolio, building projects, residential construction, commercial construction, renovation projects">
+    <meta property="og:title" content="Portfolio - Octave Design and Build">
+    <meta property="og:description" content="Browse our collection of completed projects showcasing innovative design and construction excellence.">
+    <meta property="og:type" content="website">
+    <title>Portfolio - Octave Design and Build</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Octave Design and Build</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p class="page-subtitle">Showcasing excellence in every project</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Filters -->
+    <section class="portfolio-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="renovation">Renovations</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="portfolio-gallery">
+        <div class="container">
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="residential" id="project1">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Modern Residential Estate" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Modern Residential Estate</h3>
+                            <p>Residential • Vancouver, BC</p>
+                            <button class="btn-view-details" data-project="1">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Modern Residential Estate</h3>
+                        <p class="portfolio-tech">Steel Frame + Solar Integration</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="commercial" id="project2">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Commercial Office Complex" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Commercial Office Complex</h3>
+                            <p>Commercial • Toronto, ON</p>
+                            <button class="btn-view-details" data-project="2">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Commercial Office Complex</h3>
+                        <p class="portfolio-tech">LEED Gold + Smart Building Systems</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="renovation" id="project3">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop" alt="Historic Building Renovation" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Historic Building Renovation</h3>
+                            <p>Renovation • Montreal, QC</p>
+                            <button class="btn-view-details" data-project="3">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Historic Building Renovation</h3>
+                        <p class="portfolio-tech">Heritage Restoration + Modern Integration</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-category="residential" id="project4">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop" alt="Luxury Mountain Home" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Luxury Mountain Home</h3>
+                            <p>Residential • Whistler, BC</p>
+                            <button class="btn-view-details" data-project="4">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Luxury Mountain Home</h3>
+                        <p class="portfolio-tech">Passive House + Geothermal</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-category="commercial" id="project5">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Retail Shopping Center" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Retail Shopping Center</h3>
+                            <p>Commercial • Calgary, AB</p>
+                            <button class="btn-view-details" data-project="5">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Retail Shopping Center</h3>
+                        <p class="portfolio-tech">Mixed-Use Development</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-category="residential" id="project6">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop" alt="Contemporary Urban Loft" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Contemporary Urban Loft</h3>
+                            <p>Residential • Vancouver, BC</p>
+                            <button class="btn-view-details" data-project="6">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Contemporary Urban Loft</h3>
+                        <p class="portfolio-tech">Open Concept + Smart Home</p>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="portfolio-item" data-category="renovation" id="project7">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop" alt="Kitchen & Bath Renovation" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Kitchen & Bath Renovation</h3>
+                            <p>Renovation • Victoria, BC</p>
+                            <button class="btn-view-details" data-project="7">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Kitchen & Bath Renovation</h3>
+                        <p class="portfolio-tech">Modern Design + Energy Efficiency</p>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="portfolio-item" data-category="commercial" id="project8">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Hospitality Complex" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Hospitality Complex</h3>
+                            <p>Commercial • Banff, AB</p>
+                            <button class="btn-view-details" data-project="8">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Hospitality Complex</h3>
+                        <p class="portfolio-tech">Luxury Resort + Sustainable Design</p>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="portfolio-item" data-category="residential" id="project9">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db55?w=800&h=600&fit=crop" alt="Eco-Friendly Family Home" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Eco-Friendly Family Home</h3>
+                            <p>Residential • Kelowna, BC</p>
+                            <button class="btn-view-details" data-project="9">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Eco-Friendly Family Home</h3>
+                        <p class="portfolio-tech">Net Zero + Solar + Rainwater Harvesting</p>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="portfolio-item" data-category="renovation" id="project10">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop" alt="Basement Conversion" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Basement Conversion</h3>
+                            <p>Renovation • Ottawa, ON</p>
+                            <button class="btn-view-details" data-project="10">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Basement Conversion</h3>
+                        <p class="portfolio-tech">Multi-Purpose Space + Home Theater</p>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="portfolio-item" data-category="commercial" id="project11">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Medical Facility" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Medical Facility</h3>
+                            <p>Commercial • Edmonton, AB</p>
+                            <button class="btn-view-details" data-project="11">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Medical Facility</h3>
+                        <p class="portfolio-tech">Healthcare Design + Accessibility</p>
+                    </div>
+                </div>
+
+                <!-- Project 12 -->
+                <div class="portfolio-item" data-category="residential" id="project12">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Coastal Retreat" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Coastal Retreat</h3>
+                            <p>Residential • Tofino, BC</p>
+                            <button class="btn-view-details" data-project="12">View Details</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Coastal Retreat</h3>
+                        <p class="portfolio-tech">Weather-Resistant Design + Ocean Views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Octave Design and Build</h3>
+                    <p>Harmony in Structure: Design, Build, Inspire</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>123 Construction Avenue<br>Vancouver, BC V6B 1A1</p>
+                    <p>Phone: (604) 555-0123<br>Email: info@octavedesignbuild.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Octave Design and Build. All rights reserved. | <a href="#">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

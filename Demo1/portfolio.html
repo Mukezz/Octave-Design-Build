@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Octave Design and Build portfolio featuring 50+ completed residential and commercial projects.">
+  <meta property="og:title" content="Portfolio - Octave Design and Build">
+  <meta property="og:description" content="View our impressive portfolio of completed construction and design projects.">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    .filter-btn {
+      padding: 0.75rem 1.5rem;
+      background-color: var(--light-gray);
+      color: var(--text-color);
+      border: 2px solid var(--light-gray);
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .filter-btn.active {
+      background-color: var(--accent-color);
+      color: var(--white);
+      border-color: var(--accent-color);
+    }
+
+    .portfolio-item {
+      display: block;
+      animation: fadeOut 0.3s ease;
+    }
+
+    .portfolio-item.show {
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(44, 62, 80, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .portfolio-card:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay-content {
+      color: white;
+    }
+
+    .portfolio-overlay h3 {
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-overlay p {
+      font-size: 0.9rem;
+      color: #ECF0F1;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-info {
+      padding: 1.5rem;
+      background: var(--white);
+    }
+
+    .portfolio-info h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-type {
+      display: inline-block;
+      background-color: var(--light-gray);
+      color: var(--primary-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  </style>
+  
+  <title>Portfolio - Octave Design and Build</title>
+</head>
+<body>
+
+<!-- ==================== HEADER & NAVIGATION ==================== -->
+<header>
+  <div class="header-container">
+    <div class="logo">OCTAVE</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero" style="height: 50vh; margin-top: 60px;">
+  <div class="hero-content">
+    <h1>Our Portfolio</h1>
+    <p class="hero-tagline">50+ exceptional projects completed</p>
+  </div>
+</section>
+
+<!-- ==================== PORTFOLIO FILTER & GALLERY ==================== -->
+<section>
+  <div class="section-container">
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+      <p>Browse our collection of residential, commercial, and renovation projects.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="residential">Residential</button>
+      <button class="filter-btn" data-filter="commercial">Commercial</button>
+      <button class="filter-btn" data-filter="renovation">Renovations</button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      
+      <!-- Project 1 - Residential -->
+      <div class="portfolio-item show" data-category="residential" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1512917774080-9b721f069e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern Urban Residence">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Modern Urban Residence</h3>
+              <p>Luxury residential project with panoramic views</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-1')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Residential</span>
+          <h3>Modern Urban Residence</h3>
+          <p>Contemporary design with sustainable features and smart home integration.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 - Commercial -->
+      <div class="portfolio-item show" data-category="commercial" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech Hub Office">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Tech Hub Office Complex</h3>
+              <p>250+ employee workspace with green certified design</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-2')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Commercial</span>
+          <h3>Tech Hub Office Complex</h3>
+          <p>LEED Gold certified office building with collaborative workspaces.</p>
+        </div>
+      </div>
+
+      <!-- Project 3 - Residential -->
+      <div class="portfolio-item show" data-category="residential" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hillside Contemporary">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Hillside Contemporary</h3>
+              <p>5-bedroom luxury home with mountain views</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-3')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Residential</span>
+          <h3>Hillside Contemporary</h3>
+          <p>Luxury residence nestled in the foothills with premium finishes.</p>
+        </div>
+      </div>
+
+      <!-- Project 4 - Renovation -->
+      <div class="portfolio-item show" data-category="renovation" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Heritage Building Lofts">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Heritage Building Lofts</h3>
+              <p>1920s building transformed into luxury lofts</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-4')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Renovation</span>
+          <h3>Heritage Building Lofts</h3>
+          <p>Adaptive reuse preserving historic character with modern amenities.</p>
+        </div>
+      </div>
+
+      <!-- Project 5 - Commercial -->
+      <div class="portfolio-item show" data-category="commercial" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1554434743-9ee32fe27153?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Retail Complex">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Downtown Retail Complex</h3>
+              <p>Mixed-use development with 40,000 sqft retail space</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-5')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Commercial</span>
+          <h3>Downtown Retail Complex</h3>
+          <p>Mixed-use development combining retail with residential units.</p>
+        </div>
+      </div>
+
+      <!-- Project 6 - Residential -->
+      <div class="portfolio-item show" data-category="residential" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1560540332-46873e36f3bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Coastal Villa">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Coastal Villa</h3>
+              <p>Oceanfront home with sustainable features</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-6')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Residential</span>
+          <h3>Coastal Villa</h3>
+          <p>Oceanfront retreat with high-performance building systems.</p>
+        </div>
+      </div>
+
+      <!-- Project 7 - Commercial -->
+      <div class="portfolio-item show" data-category="commercial" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1553531088-d3b60b44a868?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Green Office Tower">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Green Office Tower</h3>
+              <p>15-story LEED Platinum certified tower</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-7')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Commercial</span>
+          <h3>Green Office Tower</h3>
+          <p>15-story commercial tower with net-zero energy design.</p>
+        </div>
+      </div>
+
+      <!-- Project 8 - Renovation -->
+      <div class="portfolio-item show" data-category="renovation" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industrial to Residential">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Industrial to Residential</h3>
+              <p>Former warehouse converted to luxury lofts</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-8')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Renovation</span>
+          <h3>Industrial to Residential</h3>
+          <p>Warehouse conversion with exposed beams and modern amenities.</p>
+        </div>
+      </div>
+
+      <!-- Project 9 - Residential -->
+      <div class="portfolio-item show" data-category="residential" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1570129477492-45a003537e1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Family Estate">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Family Estate</h3>
+              <p>8-bedroom home with guest house</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-9')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Residential</span>
+          <h3>Family Estate</h3>
+          <p>Multi-generational home with guest quarters and wellness center.</p>
+        </div>
+      </div>
+
+      <!-- Project 10 - Commercial -->
+      <div class="portfolio-item show" data-category="commercial" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1600580311204-84e557cf58e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Medical Center">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Advanced Medical Center</h3>
+              <p>State-of-the-art healthcare facility</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-10')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Commercial</span>
+          <h3>Advanced Medical Center</h3>
+          <p>Healthcare facility with specialized clinical spaces and patient areas.</p>
+        </div>
+      </div>
+
+      <!-- Project 11 - Renovation -->
+      <div class="portfolio-item show" data-category="renovation" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kitchen Renovation">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Complete Home Renovation</h3>
+              <p>Full home modernization in historic neighbourhood</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-11')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Renovation</span>
+          <h3>Complete Home Renovation</h3>
+          <p>Full home modernization while respecting architectural heritage.</p>
+        </div>
+      </div>
+
+      <!-- Project 12 - Residential -->
+      <div class="portfolio-item show" data-category="residential" style="display: block;">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7d8a28?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smart Home">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Smart Home Residence</h3>
+              <p>Ultra-modern home with integrated smart systems</p>
+              <button class="btn btn-primary" onclick="openProjectModal('portfolio-modal-12')" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-type">Residential</span>
+          <h3>Smart Home Residence</h3>
+          <p>Technology-integrated luxury residence with home automation systems.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PORTFOLIO MODALS ==================== -->
+
+<!-- Project 1 Modal -->
+<div id="portfolio-modal-1" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Modern Urban Residence</h3>
+    </div>
+    <div class="modal-body">
+      <img src="https://images.unsplash.com/photo-1512917774080-9b721f069e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Urban Residence" style="width: 100%; margin-bottom: 1rem; border-radius: 8px;">
+      <p><strong>Category:</strong> Residential</p>
+      <p><strong>Location:</strong> Downtown Vancouver, BC</p>
+      <p><strong>Completion:</strong> 2023</p>
+      <p><strong>Size:</strong> 5,000 sq ft</p>
+      
+      <h4 style="margin-top: 1.5rem;">Project Overview</h4>
+      <p>A stunning contemporary residence featuring floor-to-ceiling windows with panoramic city views. This luxury project showcases modern design principles with high-end finishes throughout.</p>
+      
+      <h4 style="margin-top: 1rem;">Key Features</h4>
+      <ul style="margin-left: 1.5rem;">
+        <li>Open-concept living design</li>
+        <li>Solar panel integration</li>
+        <li>Smart home automation</li>
+        <li>Sustainable hardwood flooring</li>
+        <li>Energy-efficient systems</li>
+      </ul>
+      
+      <h4 style="margin-top: 1rem;">Technologies Used</h4>
+      <p>Steel Frame | Solar Integration | Smart Home | Sustainable Materials</p>
+    </div>
+  </div>
+</div>
+
+<!-- Project 2 Modal -->
+<div id="portfolio-modal-2" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Tech Hub Office Complex</h3>
+    </div>
+    <div class="modal-body">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tech Hub Office" style="width: 100%; margin-bottom: 1rem; border-radius: 8px;">
+      <p><strong>Category:</strong> Commercial</p>
+      <p><strong>Location:</strong> Silicon Valley, CA</p>
+      <p><strong>Completion:</strong> 2024</p>
+      <p><strong>Size:</strong> 120,000 sq ft</p>
+      
+      <h4 style="margin-top: 1.5rem;">Project Overview</h4>
+      <p>A cutting-edge office complex designed for 250+ employees, featuring collaborative workspaces and sustainable design principles. LEED Gold certified with green roofing and natural lighting throughout.</p>
+      
+      <h4 style="margin-top: 1rem;">Highlights</h4>
+      <ul style="margin-left: 1.5rem;">
+        <li>LEED Gold Certification</li>
+        <li>Green rooftop with native plants</li>
+        <li>Advanced air quality systems</li>
+        <li>Collaborative workspace design</li>
+        <li>40% energy reduction</li>
+      </ul>
+      
+      <h4 style="margin-top: 1rem;">Impact</h4>
+      <p>This project reduces annual energy consumption by 40% compared to conventional offices and provides an inspiring workplace for innovative teams.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Project 3 Modal -->
+<div id="portfolio-modal-3" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Hillside Contemporary</h3>
+    </div>
+    <div class="modal-body">
+      <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hillside Contemporary" style="width: 100%; margin-bottom: 1rem; border-radius: 8px;">
+      <p><strong>Category:</strong> Residential</p>
+      <p><strong>Location:</strong> Whistler, BC</p>
+      <p><strong>Completion:</strong> 2023</p>
+      <p><strong>Size:</strong> 7,500 sq ft</p>
+      
+      <h4 style="margin-top: 1.5rem;">Project Overview</h4>
+      <p>A luxurious 5-bedroom mountain residence nestled in the foothills, designed to maximize mountain views while providing a modern, comfortable family home.</p>
+      
+      <h4 style="margin-top: 1rem;">Special Features</h4>
+      <ul style="margin-left: 1.5rem;">
+        <li>5 bedrooms, 5 bathrooms</li>
+        <li>Panoramic mountain views</li>
+        <li>Home theater and wine cellar</li>
+        <li>Heated outdoor pool</li>
+        <li>Premium stone and wood finishes</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Project 4 Modal -->
+<div id="portfolio-modal-4" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Heritage Building Lofts</h3>
+    </div>
+    <div class="modal-body">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Heritage Lofts" style="width: 100%; margin-bottom: 1rem; border-radius: 8px;">
+      <p><strong>Category:</strong> Renovation/Adaptive Reuse</p>
+      <p><strong>Location:</strong> Historic District, Vancouver</p>
+      <p><strong>Completion:</strong> 2023</p>
+      <p><strong>Units:</strong> 12 luxury lofts</p>
+      
+      <h4 style="margin-top: 1.5rem;">Project Overview</h4>
+      <p>Transforming a 1920s heritage building into 12 luxury lofts while preserving its historic character. This adaptive reuse project combines architectural heritage with modern living standards.</p>
+      
+      <h4 style="margin-top: 1rem;">Heritage Preservation</h4>
+      <ul style="margin-left: 1.5rem;">
+        <li>Original brick and timber facades preserved</li>
+        <li>Heritage Conservation Award winner</li>
+        <li>Period-appropriate modern systems</li>
+        <li>High-tech infrastructure hidden</li>
+        <li>Strict heritage guidelines compliance</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Project 5-12 Modals (abbreviated for space) -->
+<div id="portfolio-modal-5" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Downtown Retail Complex</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>Mixed-use development combining retail with residential units</strong></p>
+      <p><strong>40,000 sqft</strong> retail space with 60 residential apartments above.</p>
+      <img src="https://images.unsplash.com/photo-1554434743-9ee32fe27153?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Retail Complex" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+    </div>
+  </div>
+</div>
+
+<div id="portfolio-modal-6" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Coastal Villa</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>Oceanfront luxury residence with sustainable features</strong></p>
+      <p><strong>6 bedrooms</strong> with premium finishes and high-performance building systems.</p>
+      <img src="https://images.unsplash.com/photo-1560540332-46873e36f3bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coastal Villa" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+    </div>
+  </div>
+</div>
+
+<div id="portfolio-modal-7" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Green Office Tower</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>15-story LEED Platinum certified office tower</strong></p>
+      <p><strong>Net-zero energy design</strong> with integrated renewable energy systems.</p>
+      <img src="https://images.unsplash.com/photo-1553531088-d3b60b44a868?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Green Office Tower" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+    </div>
+  </div>
+</div>
+
+<div id="portfolio-modal-8" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Industrial to Residential</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>Former warehouse converted to luxury lofts</strong></p>
+      <p><strong>20 loft units</strong> with exposed beams and modern amenities.</p>
+      <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Lofts" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+    </div>
+  </div>
+</div>
+
+<div id="portfolio-modal-9" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Family Estate</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>Multi-generational home with guest quarters</strong></p>
+      <p><strong>8 bedrooms</strong>, wellness center, and guest house on 2-acre property.</p>
+      <img src="https://images.unsplash.com/photo-1570129477492-45a003537e1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family Estate" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+    </div>
+  </div>
+</div>
+
+<div id="portfolio-modal-10" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Advanced Medical Center</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>State-of-the-art healthcare facility</strong></p>
+      <p><strong>50,000 sqft</strong> with specialized clinical spaces and patient care areas.</p>
+      <img src="https://images.unsplash.com/photo-1600580311204-84e557cf58e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Medical Center" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+    </div>
+  </div>
+</div>
+
+<div id="portfolio-modal-11" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Complete Home Renovation</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>Full home modernization in historic neighbourhood</strong></p>
+      <p>Complete gut renovation while respecting <strong>architectural heritage</strong> and period features.</p>
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Home Renovation" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+    </div>
+  </div>
+</div>
+
+<div id="portfolio-modal-12" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div class="modal-header">
+      <h3>Smart Home Residence</h3>
+    </div>
+    <div class="modal-body">
+      <p><strong>Ultra-modern home with integrated smart systems</strong></p>
+      <p><strong>Full home automation</strong> with IoT devices and energy management systems.</p>
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7d8a28?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Smart Home" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CTA SECTION ==================== -->
+<section style="background-color: #2C3E50; color: white; padding: 4rem 2rem; text-align: center;">
+  <div class="section-container">
+    <h2 style="color: white; margin-bottom: 1rem;">Inspired by Our Work?</h2>
+    <p style="color: #ECF0F1; margin-bottom: 2rem; font-size: 1.1rem;">Let's discuss how we can bring your project vision to life.</p>
+    <a href="contact.html" class="btn btn-primary">Request a Consultation</a>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>About Octave</h4>
+      <p>Premium construction design and build services specializing in innovative residential and commercial projects.</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com" class="social-icon" title="LinkedIn">🔗</a>
+        <a href="https://instagram.com" class="social-icon" title="Instagram">📸</a>
+        <a href="https://facebook.com" class="social-icon" title="Facebook">f</a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Architectural Design</a></li>
+        <li><a href="services.html">Construction Management</a></li>
+        <li><a href="services.html">Sustainable Builds</a></li>
+        <li><a href="services.html">Project Consulting</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Info</h4>
+      <p>📍 123 Design Street, Vancouver, BC V6B 1A1</p>
+      <p>📞 +1 (604) 555-0123</p>
+      <p>✉️ info@octavedesignbuild.com</p>
+      <p>🕐 Mon-Fri: 9:00 AM - 6:00 PM</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Octave Design and Build. All rights reserved.</p>
+    <p><a href="#" style="color: var(--light-gray);">Privacy Policy</a> | <a href="#" style="color: var(--light-gray);">Terms of Service</a></p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

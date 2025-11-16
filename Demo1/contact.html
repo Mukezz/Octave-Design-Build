@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Octave Design and Build for a free consultation on your construction and design project.">
+  <meta property="og:title" content="Contact - Octave Design and Build">
+  <meta property="og:description" content="Get in touch with our team for a free project consultation.">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <title>Contact Us - Octave Design and Build</title>
+</head>
+<body>
+
+<!-- ==================== HEADER & NAVIGATION ==================== -->
+<header>
+  <div class="header-container">
+    <div class="logo">OCTAVE</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero" style="height: 50vh; margin-top: 60px;">
+  <div class="hero-content">
+    <h1>Get In Touch</h1>
+    <p class="hero-tagline">Let's bring your vision to life</p>
+  </div>
+</section>
+
+<!-- ==================== CONTACT SECTION ==================== -->
+<section>
+  <div class="section-container">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+        
+        <!-- Contact Form -->
+        <div>
+          <h2>Send us a Message</h2>
+          <p style="color: #34495E; margin-bottom: 2rem;">Fill out the form below and our team will get back to you within 24 hours.</p>
+          
+          <form data-validate>
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company">
+            </div>
+
+            <div class="form-group">
+              <label for="project-type">Project Type *</label>
+              <select id="project-type" name="project_type" required>
+                <option value="">-- Select an option --</option>
+                <option value="residential">Residential Design & Build</option>
+                <option value="commercial">Commercial Development</option>
+                <option value="renovation">Renovation & Modernization</option>
+                <option value="sustainable">Sustainable Building</option>
+                <option value="consulting">Project Consulting</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Estimated Budget</label>
+              <select id="budget" name="budget">
+                <option value="">-- Select an option --</option>
+                <option value="under-250k">Under $250K</option>
+                <option value="250k-500k">$250K - $500K</option>
+                <option value="500k-1m">$500K - $1M</option>
+                <option value="1m-2m">$1M - $2M</option>
+                <option value="2m-plus">$2M+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details *</label>
+              <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+            </div>
+
+            <!-- Honeypot Field (hidden from users) -->
+            <input type="text" name="website" style="display: none;">
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer;">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h2>Contact Information</h2>
+          
+          <div style="margin-bottom: 2.5rem;">
+            <h4 style="color: #E74C3C; margin-bottom: 0.5rem;">📍 Office Location</h4>
+            <p>123 Design Street<br>Vancouver, BC V6B 1A1<br>Canada</p>
+          </div>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h4 style="color: #E74C3C; margin-bottom: 0.5rem;">📞 Phone</h4>
+            <p><a href="tel:+16045550123" style="color: #2C3E50; font-weight: 600;">+1 (604) 555-0123</a></p>
+          </div>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h4 style="color: #E74C3C; margin-bottom: 0.5rem;">✉️ Email</h4>
+            <p><a href="mailto:info@octavedesignbuild.com" style="color: #2C3E50; font-weight: 600;">info@octavedesignbuild.com</a></p>
+          </div>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h4 style="color: #E74C3C; margin-bottom: 0.5rem;">🕐 Business Hours</h4>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: By Appointment<br>Sunday: Closed</p>
+          </div>
+
+          <div style="background-color: #ECF0F1; padding: 1.5rem; border-radius: 8px;">
+            <h4 style="color: #2C3E50; margin-bottom: 1rem;">Follow Us</h4>
+            <div class="social-icons">
+              <a href="https://linkedin.com/company/octave-design-build" class="social-icon" title="LinkedIn">🔗</a>
+              <a href="https://instagram.com/octavedesignbuild" class="social-icon" title="Instagram">📸</a>
+              <a href="https://facebook.com/octavedesignbuild" class="social-icon" title="Facebook">f</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MAP SECTION ==================== -->
+<section style="background-color: #F8F9FA; padding: 5rem 2rem;">
+  <div class="section-container">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Visit Our Office</h2>
+    <div style="border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md); height: 400px;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.6969155906603!2d-123.11626362347654!3d49.28425817132903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673cc6c6c6c6d%3A0x6c6c6c6c6c6c6c6c!2s123%20Design%20St%2C%20Vancouver%2C%20BC%20V6B%201A1!5e0!3m2!1sen!2sca!4v1234567890" 
+        width="100%" 
+        height="100%" 
+        style="border: none;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ SECTION ==================== -->
+<section>
+  <div class="section-container">
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p>Find answers to common questions about our services and process.</p>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div class="accordion">
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>What is the typical project timeline?</span>
+            <span class="accordion-toggle">▼</span>
+          </div>
+          <div class="accordion-body">
+            <p>Project timelines vary based on scope and complexity. Residential projects typically take 8-18 months from design to completion. Commercial projects may take 12-24 months. We provide detailed timelines during the consultation phase and maintain regular communication throughout.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Do you handle the permitting process?</span>
+            <span class="accordion-toggle">▼</span>
+          </div>
+          <div class="accordion-body">
+            <p>Yes, we manage the entire permitting process. Our team handles all municipal submissions, applications, and approvals. This ensures compliance with local building codes and regulations, streamlining the process for you.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>What are your service areas?</span>
+            <span class="accordion-toggle">▼</span>
+          </div>
+          <div class="accordion-body">
+            <p>We primarily serve British Columbia, focusing on the Greater Vancouver area and surrounding regions. For larger projects, we work with trusted partners across Canada. Please contact us to discuss your specific location and needs.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Do you offer sustainable building options?</span>
+            <span class="accordion-toggle">▼</span>
+          </div>
+          <div class="accordion-body">
+            <p>Absolutely. Sustainability is core to our mission. We specialize in LEED certification, energy-efficient design, eco-friendly materials, and renewable energy integration. We can advise on sustainability options that fit your budget and goals.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>What is included in a project consultation?</span>
+            <span class="accordion-toggle">▼</span>
+          </div>
+          <div class="accordion-body">
+            <p>A consultation typically includes: site assessment, discussion of your vision and goals, budget review, preliminary timeline, service recommendations, and next steps. This is a no-obligation opportunity for us to understand your project and provide guidance.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>How much does design work cost?</span>
+            <span class="accordion-toggle">▼</span>
+          </div>
+          <div class="accordion-body">
+            <p>Design costs vary based on project complexity and size. Residential projects typically start at $15,000, while commercial projects start at $30,000. We'll provide a detailed proposal after understanding your specific requirements and budget.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Do you provide warranty on completed projects?</span>
+            <span class="accordion-toggle">▼</span>
+          </div>
+          <div class="accordion-body">
+            <p>Yes. All construction work is covered by a comprehensive warranty. We provide a 1-year warranty on workmanship and 2-year warranties on major systems. We also arrange extended warranties on products and appliances where available.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Can you handle renovation projects?</span>
+            <span class="accordion-toggle">▼</span>
+          </div>
+          <div class="accordion-body">
+            <p>Yes, we specialize in renovation and adaptive reuse projects. Whether it's a kitchen update, complete home modernization, or historic building restoration, our team has extensive experience managing complex renovation challenges.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS SECTION ==================== -->
+<section style="background-color: #F8F9FA; padding: 5rem 2rem;">
+  <div class="section-container">
+    <div class="section-title">
+      <h2>What Our Clients Say</h2>
+      <p>Real feedback from satisfied clients who trusted us with their projects.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card" data-animate>
+        <div class="card-body">
+          <p style="font-style: italic; color: #34495E; margin-bottom: 1.5rem;">"Octave exceeded our expectations. From design to completion, they were professional, transparent, and delivered a stunning home that perfectly captures our vision. Highly recommended!"</p>
+          <div style="border-top: 1px solid #D5DBDB; padding-top: 1rem;">
+            <p style="font-weight: 600; margin: 0;">Sarah & Michael Chen</p>
+            <p style="color: #34495E; font-size: 0.9rem; margin: 0.25rem 0;">Residential Project, 2023</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-animate>
+        <div class="card-body">
+          <p style="font-style: italic; color: #34495E; margin-bottom: 1.5rem;">"Working with Octave on our office renovation was seamless. They managed the project with precision, minimized disruption to our operations, and delivered exactly on schedule and budget."</p>
+          <div style="border-top: 1px solid #D5DBDB; padding-top: 1rem;">
+            <p style="font-weight: 600; margin: 0;">James Robertson</p>
+            <p style="color: #34495E; font-size: 0.9rem; margin: 0.25rem 0;">Commercial Project, 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-animate>
+        <div class="card-body">
+          <p style="font-style: italic; color: #34495E; margin-bottom: 1.5rem;">"Their attention to sustainability details impressed us most. They helped us achieve LEED Gold certification while keeping our project within budget. Outstanding expertise and commitment."</p>
+          <div style="border-top: 1px solid #D5DBDB; padding-top: 1rem;">
+            <p style="font-weight: 600; margin: 0;">Dr. Patricia Wong</p>
+            <p style="color: #34495E; font-size: 0.9rem; margin: 0.25rem 0;">Sustainable Project, 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA SECTION ==================== -->
+<section style="background-color: #2C3E50; color: white; padding: 4rem 2rem; text-align: center;">
+  <div class="section-container">
+    <h2 style="color: white; margin-bottom: 1rem;">Ready to Get Started?</h2>
+    <p style="color: #ECF0F1; margin-bottom: 2rem; font-size: 1.1rem;">Schedule your free consultation today. Let's discuss your project and explore how we can help bring your vision to life.</p>
+    <a href="#contact" class="btn btn-primary">Schedule a Free Consultation</a>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>About Octave</h4>
+      <p>Premium construction design and build services specializing in innovative residential and commercial projects.</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com" class="social-icon" title="LinkedIn">🔗</a>
+        <a href="https://instagram.com" class="social-icon" title="Instagram">📸</a>
+        <a href="https://facebook.com" class="social-icon" title="Facebook">f</a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#design">Architectural Design</a></li>
+        <li><a href="services.html#build">Construction Management</a></li>
+        <li><a href="services.html#sustainable">Sustainable Builds</a></li>
+        <li><a href="services.html#consulting">Project Consulting</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Info</h4>
+      <p>📍 123 Design Street, Vancouver, BC V6B 1A1</p>
+      <p>📞 +1 (604) 555-0123</p>
+      <p>✉️ info@octavedesignbuild.com</p>
+      <p>🕐 Mon-Fri: 9:00 AM - 6:00 PM</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Octave Design and Build. All rights reserved.</p>
+    <p><a href="#" style="color: var(--light-gray);">Privacy Policy</a> | <a href="#" style="color: var(--light-gray);">Terms of Service</a></p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

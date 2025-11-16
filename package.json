@@ -1,0 +1,15 @@
+{
+  "name": "octave-design-build-showcase",
+  "version": "1.0.0",
+  "description": "Octave Design Build - Multi-demo showcase",
+  "scripts": {
+    "build": "npm run build:demo3 && npm run build:demo4",
+    "build:demo3": "cd \"Octave Design Build - Demo3\" && npm install && npm run build",
+    "build:demo4": "cd \"Octave Design Build - Demo4\" && npm install && npm run build",
+    "install:all": "npm run install:demo3 && npm run install:demo4",
+    "install:demo3": "cd \"Octave Design Build - Demo3\" && npm install",
+    "install:demo4": "cd \"Octave Design Build - Demo4\" && npm install"
+  },
+  "private": true
+}
+
