@@ -2,11 +2,5 @@
   "name": "octave-design-build-showcase",
   "version": "1.0.0",
   "description": "Octave Design Build - Multi-demo showcase",
-  "scripts": {
-    "serve": "npx http-server . -p 3000 -o"
-  },
-  "private": true,
-  "devDependencies": {
-    "http-server": "^14.1.1"
-  }
+  "private": true
 }

@@ -1,41 +1,33 @@
 {
   "version": 2,
-  "buildCommand": "",
-  "outputDirectory": ".",
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": null,
   "rewrites": [
     {
       "source": "/",
       "destination": "/demo-switcher.html"
     },
     {
-      "source": "/Octave Design Build - Demo3/(.*)",
+      "source": "/demo3",
       "destination": "/Octave Design Build - Demo3/html/index.html"
     },
     {
-      "source": "/Octave Design Build - Demo4/(.*)",
+      "source": "/demo4",
       "destination": "/Octave Design Build - Demo4/html/index.html"
     },
     {
-      "source": "/Octave Design Build - Demo3/html/(.*)",
+      "source": "/Octave Design Build - Demo3/(.*)",
       "destination": "/Octave Design Build - Demo3/html/$1"
     },
     {
-      "source": "/Octave Design Build - Demo4/html/(.*)",
+      "source": "/Octave Design Build - Demo4/(.*)",
       "destination": "/Octave Design Build - Demo4/html/$1"
     }
   ],
   "headers": [
     {
-      "source": "/Octave Design Build - Demo3/html/(.*\\.(js|css|jpg|jpeg|png|gif|svg|woff|woff2|ttf|eot))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/Octave Design Build - Demo4/html/(.*\\.(js|css|jpg|jpeg|png|gif|svg|woff|woff2|ttf|eot))",
+      "source": "/(.*\\.(js|css|jpg|jpeg|png|gif|svg|woff|woff2|ttf|eot))",
       "headers": [
         {
           "key": "Cache-Control",
